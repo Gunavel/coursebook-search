@@ -9,11 +9,27 @@
   background-color: #f1f1f1;
   padding: 10px;
   width: 100%;
+  font-size: 16px;
+}
+
+.input-count {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.search-bar {
+  margin-top: 10px;
 }
 
 .btn-submit {
   background-color: DodgerBlue;
   color: #fff;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
 }
 
 .autocomplete-items {

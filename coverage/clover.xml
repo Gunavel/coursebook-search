@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1582723255566" clover="3.2.0">
-  <project timestamp="1582723255566" name="All files">
+<coverage generated="1582737795806" clover="3.2.0">
+  <project timestamp="1582737795806" name="All files">
     <metrics statements="44" coveredstatements="44" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="10" elements="62" coveredelements="62" complexity="0" loc="44" ncloc="44" packages="1" files="1" classes="1"/>
     <file name="course-book-finder.js" path="/Users/Guna/Development/coursebook-search/src/api/course-book-finder.js">
       <metrics statements="44" coveredstatements="44" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="10"/>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
-import AutoCompleteList from './auto-complete-list';
+import AutoComplete from './auto-complete';
 
 // API
 const CourseBookFinder = require('../../api/course-book-finder');
@@ -79,6 +79,9 @@ class FilterableSearchBar extends Component {
   };
 
   handleSearchFormSubmit = () => {
+    this.setState({
+      searchText: '',
+    });
     this.props.onSubmit(this.state.selectedBook);
   };
 
@@ -92,7 +95,7 @@ class FilterableSearchBar extends Component {
 
     return (
       <div className="search-bar">
-        <AutoCompleteList
+        <AutoComplete
           searchText={searchText}
           listItems={searchResults}
           showList={showAutoComplete}

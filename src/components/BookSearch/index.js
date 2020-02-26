@@ -4,11 +4,21 @@ import React, { useState } from 'react';
 import FilterableSearchBar from '../SearchBar';
 import BooksList from '../BooksList';
 
+// Helpers
+import _isEmptyObject from '../../helpers/isEmptyObject';
+
 function BookFinder() {
   const [books, setBooks] = useState([]);
 
   const handleSearchSubmit = book => {
-    setBooks([...books, book]);
+    if (_isEmptyObject(book)) {
+      return;
+    }
+
+    const isBookAdded = books.find(({ title }) => title === book.title);
+    if (!isBookAdded) {
+      setBooks([...books, book]);
+    }
   };
 
   return (

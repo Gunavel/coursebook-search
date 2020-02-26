@@ -53,6 +53,7 @@ function AutoCompleteList(props) {
         />
         {autoCompleteItems}
         <input
+          className="input-count"
           type="number"
           value={suggestionCount}
           onChange={handleSuggestionCountChange}
