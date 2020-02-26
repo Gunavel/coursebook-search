@@ -1,9 +1,10 @@
 {
   "name": "coursebook-search",
   "version": "1.0.0",
-  "description": "Lightweight search engine to find course books based on course book summaries.",
+  "description": "Lightweight keyword search engine for searching course books based on course summaries.",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --open --mode development",
     "test": "jest --coverage"
   },
   "repository": {
@@ -21,6 +22,25 @@
   },
   "homepage": "https://github.com/Gunavel/coursebook-search#readme",
   "devDependencies": {
-    "jest": "^25.1.0"
+    "@babel/core": "7.8.4",
+    "@babel/preset-env": "7.8.4",
+    "@babel/preset-react": "7.8.3",
+    "babel-eslint": "10.1.0",
+    "babel-loader": "8.0.6",
+    "eslint": "6.8.0",
+    "eslint-config-react": "1.1.7",
+    "eslint-loader": "3.0.3",
+    "eslint-plugin-react": "7.18.3",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "25.1.0",
+    "prettier": "1.19.1",
+    "webpack": "4.41.6",
+    "webpack-cli": "3.3.11",
+    "webpack-dev-server": "3.10.3"
+  },
+  "dependencies": {
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   }
 }

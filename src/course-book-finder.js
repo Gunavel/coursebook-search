@@ -21,7 +21,7 @@ class CourseBookFinder {
     }
 
     const rawQuery = String(query).toLowerCase();
-    const words = rawQuery.split(" ");
+    const words = rawQuery.split(' ');
     const limit = Number(suggestionsCount) || DEFAULT_SUGGESTIONS_COUNT;
 
     return this._findMatches(rawQuery, words).then(results => {
@@ -53,7 +53,7 @@ class CourseBookFinder {
 
         if (text === rawQuery) {
           exactMatches.push({
-            summary_id: i
+            summary_id: i,
           });
           break;
         }
@@ -67,13 +67,13 @@ class CourseBookFinder {
 
         partialMatches.push({
           summary_id: i,
-          score
+          score,
         });
       }
 
       const result = {
         exactMatches,
-        partialMatches
+        partialMatches,
       };
 
       resolve(result);
@@ -130,7 +130,7 @@ class CourseBookFinder {
       return {
         title: titles[summary_id],
         author,
-        summary
+        summary,
       };
     });
 
