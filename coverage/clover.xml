@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1582702141883" clover="3.2.0">
+  <project timestamp="1582702141883" name="All files">
+    <metrics statements="44" coveredstatements="44" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="10" elements="62" coveredelements="62" complexity="0" loc="44" ncloc="44" packages="1" files="1" classes="1"/>
+    <file name="course-book-finder.js" path="/Users/Guna/Development/coursebook-search/src/course-book-finder.js">
+      <metrics statements="44" coveredstatements="44" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="10"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="15" type="stmt"/>
+      <line num="7" count="15" type="stmt"/>
+      <line num="11" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="15" count="8" type="stmt"/>
+      <line num="16" count="8" type="stmt"/>
+      <line num="17" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="8" type="stmt"/>
+      <line num="20" count="8" type="stmt"/>
+      <line num="21" count="8" type="stmt"/>
+      <line num="23" count="8" type="stmt"/>
+      <line num="28" count="5" type="stmt"/>
+      <line num="29" count="5" type="stmt"/>
+      <line num="30" count="5" type="stmt"/>
+      <line num="32" count="5" type="stmt"/>
+      <line num="33" count="5" type="stmt"/>
+      <line num="34" count="222" type="stmt"/>
+      <line num="36" count="222" type="cond" truecount="2" falsecount="0"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="43" count="221" type="stmt"/>
+      <line num="45" count="221" type="stmt"/>
+      <line num="46" count="514" type="stmt"/>
+      <line num="47" count="514" type="stmt"/>
+      <line num="50" count="221" type="stmt"/>
+      <line num="56" count="5" type="stmt"/>
+      <line num="61" count="5" type="stmt"/>
+      <line num="66" count="7" type="stmt"/>
+      <line num="67" count="7" type="stmt"/>
+      <line num="69" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="70" count="2" type="stmt"/>
+      <line num="72" count="5" type="stmt"/>
+      <line num="73" count="5" type="stmt"/>
+      <line num="76" count="7" type="stmt"/>
+      <line num="80" count="261" type="stmt"/>
+      <line num="84" count="5" type="stmt"/>
+      <line num="86" count="5" type="stmt"/>
+      <line num="87" count="8" type="stmt"/>
+      <line num="88" count="8" type="stmt"/>
+      <line num="90" count="8" type="stmt"/>
+      <line num="97" count="5" type="stmt"/>
+      <line num="101" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

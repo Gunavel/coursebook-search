@@ -4,7 +4,7 @@
   "description": "Lightweight search engine to find course books based on course book summaries.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
