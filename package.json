@@ -1,0 +1,26 @@
+{
+  "name": "coursebook-search",
+  "version": "1.0.0",
+  "description": "Lightweight search engine to find course books based on course book summaries.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gunavel/coursebook-search.git"
+  },
+  "author": {
+    "name": "Gunavel B Singaravelu",
+    "email": "gunavel.bharathi@gmail.com",
+    "url": "https://www.linkedin.com/in/gunavel"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gunavel/coursebook-search/issues"
+  },
+  "homepage": "https://github.com/Gunavel/coursebook-search#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
