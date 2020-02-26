@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Welcome extends React.Component {
-  render() {
-    return <h1>React project setup</h1>;
-  }
-}
+// Root component
+import App from './app';
 
-ReactDOM.render(<Welcome />, document.getElementById('root'));
+// CSS
+import './index.css';
+
+// Render app component to the root div
+ReactDOM.render(<App />, document.getElementById('root'));
