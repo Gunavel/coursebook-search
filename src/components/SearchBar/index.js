@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // Components
 import AutoComplete from './auto-complete';
@@ -110,5 +111,9 @@ class FilterableSearchBar extends Component {
     );
   }
 }
+
+FilterableSearchBar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default FilterableSearchBar;

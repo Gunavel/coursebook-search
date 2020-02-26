@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // CSS
 import './card.css';
@@ -20,5 +21,17 @@ function Card(props) {
     </div>
   );
 }
+
+Card.propTypes = {
+  header: PropTypes.node,
+  footer: PropTypes.node,
+  content: PropTypes.node,
+};
+
+Card.defaultProps = {
+  header: '',
+  footer: '',
+  content: '',
+};
 
 export default Card;

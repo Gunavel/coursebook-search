@@ -6,7 +6,8 @@ import AutoComplete from './auto-complete';
 
 describe('FilterableSearchBar', () => {
   it('should render without errors', () => {
-    const comp = shallow(<FilterableSearchBar />);
+    const noop = () => {};
+    const comp = shallow(<FilterableSearchBar onSubmit={noop} />);
 
     expect(comp.find(AutoComplete).length).toEqual(1);
   });
@@ -15,7 +16,8 @@ describe('FilterableSearchBar', () => {
 describe('FilterableSearchBar Instance methods', () => {
   describe('handleSearchTextChange', () => {
     it('should call setState and performSearch', () => {
-      const comp = shallow(<FilterableSearchBar />);
+      const noop = () => {};
+      const comp = shallow(<FilterableSearchBar onSubmit={noop} />);
       const instance = comp.instance();
 
       // Mocks
@@ -32,7 +34,8 @@ describe('FilterableSearchBar Instance methods', () => {
 
   describe('handleSuggestionCountChange', () => {
     it('should call setState and performSearch', () => {
-      const comp = shallow(<FilterableSearchBar />);
+      const noop = () => {};
+      const comp = shallow(<FilterableSearchBar onSubmit={noop} />);
       const instance = comp.instance();
 
       // Mocks
@@ -49,7 +52,8 @@ describe('FilterableSearchBar Instance methods', () => {
 
   describe('updateSearchResults', () => {
     it('should call setState', () => {
-      const comp = shallow(<FilterableSearchBar />);
+      const noop = () => {};
+      const comp = shallow(<FilterableSearchBar onSubmit={noop} />);
       const instance = comp.instance();
 
       // Mocks
@@ -67,7 +71,8 @@ describe('FilterableSearchBar Instance methods', () => {
 
   describe('handleListItemSelection', () => {
     it('should call setState', () => {
-      const comp = shallow(<FilterableSearchBar />);
+      const noop = () => {};
+      const comp = shallow(<FilterableSearchBar onSubmit={noop} />);
       const instance = comp.instance();
 
       // Mocks

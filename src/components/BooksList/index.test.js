@@ -13,9 +13,13 @@ describe('BooksList', () => {
     const books = [
       {
         title: 'welcome',
+        summary: 'something',
+        author: 'myself,',
       },
       {
         title: 'Hello',
+        summary: 'nothing',
+        author: 'yourself,',
       },
     ];
     const comp = shallow(<BooksList books={books} />);

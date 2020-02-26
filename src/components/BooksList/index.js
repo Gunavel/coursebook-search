@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // Components
 import Card from '../Card';
@@ -26,5 +27,18 @@ function BooksList(props) {
     </div>
   );
 }
+
+const bookShape = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+});
+BooksList.propTypes = {
+  books: PropTypes.arrayOf(bookShape),
+};
+
+BooksList.defaultProps = {
+  books: [],
+};
 
 export default BooksList;

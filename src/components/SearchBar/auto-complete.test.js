@@ -8,6 +8,8 @@ describe('AutoCompleteList', () => {
     const listItems = [
       {
         title: 'hello',
+        summary: 'something',
+        author: 'myself,',
       },
     ];
     const noop = () => {};
@@ -33,6 +35,8 @@ describe('AutoCompleteList', () => {
     const listItems = [
       {
         title: 'hello',
+        summary: 'something',
+        author: 'myself,',
       },
     ];
     const noop = () => {};
@@ -64,6 +68,8 @@ describe('AutoCompleteList', () => {
     const listItems = [
       {
         title: 'hello',
+        summary: 'something',
+        author: 'myself,',
       },
     ];
     const noop = () => {};
@@ -97,6 +103,8 @@ describe('AutoCompleteList', () => {
     const listItems = [
       {
         title: 'hello',
+        summary: 'something',
+        author: 'myself,',
       },
     ];
     const noop = () => {};
@@ -130,6 +138,8 @@ describe('AutoCompleteList', () => {
     const listItems = [
       {
         title: 'hello',
+        summary: 'something',
+        author: 'myself,',
       },
     ];
     const noop = () => {};

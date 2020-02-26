@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+const DEFAULT_SUGGESTION_LIMIT = 3;
 
 function AutoCompleteList(props) {
   const {
@@ -69,5 +72,29 @@ function AutoCompleteList(props) {
     </form>
   );
 }
+
+const itemShape = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+});
+
+AutoCompleteList.propTypes = {
+  listItems: PropTypes.arrayOf(itemShape),
+  onListItemClick: PropTypes.func.isRequired,
+  showList: PropTypes.bool,
+  searchText: PropTypes.string,
+  suggestionCount: PropTypes.number,
+  onSearchTextChange: PropTypes.func.isRequired,
+  onSuggestionCountChange: PropTypes.func.isRequired,
+  onFormSubmit: PropTypes.func.isRequired,
+};
+
+AutoCompleteList.defaultProps = {
+  listItems: [],
+  showList: true,
+  searchText: '',
+  suggestionCount: DEFAULT_SUGGESTION_LIMIT,
+};
 
 export default AutoCompleteList;
