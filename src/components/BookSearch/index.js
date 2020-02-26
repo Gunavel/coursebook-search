@@ -5,7 +5,7 @@ import FilterableSearchBar from '../SearchBar';
 import BooksList from '../BooksList';
 
 // Helpers
-import _isEmptyObject from '../../helpers/isEmptyObject';
+import _isEmptyObject from '../../helpers/is-empty-object';
 
 function BookFinder() {
   const [books, setBooks] = useState([]);

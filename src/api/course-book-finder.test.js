@@ -1,5 +1,5 @@
-const mockData = require('../mock/data.json');
-const CourseBookFinder = require('../src/api/course-book-finder');
+const mockData = require('../../mock/data.json');
+const CourseBookFinder = require('./course-book-finder');
 
 describe('CourseBookFinder: constructor', () => {
   test('should throw error when called as a function', () => {
