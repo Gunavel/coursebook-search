@@ -27,28 +27,67 @@ describe("CourseBookFinder: search", () => {
 
   test("should return empty array if query length is less than min char length", () => {
     finder._findMatches = jest.fn();
-    const result = finder.search("a");
 
+    const query = "a";
+    const result = finder.search(query);
     expect(result).toEqual([]);
     expect(finder._findMatches).not.toHaveBeenCalled();
   });
 
   test("should call _findMatches function", () => {
-    finder._findMatches = jest.fn();
-    finder.search("as");
+    finder._formatResults = jest.fn();
+    finder._getCourseBooks = jest.fn();
+    finder._findMatches = jest.fn(() => {
+      return Promise.resolve();
+    });
 
+    const query = "as";
+    finder.search(query);
     expect(finder._findMatches).toHaveBeenCalled();
   });
 
   test("should call _findMatches function with arguments", () => {
-    finder._findMatches = jest.fn();
-    finder.search("is your problems");
+    finder._formatResults = jest.fn();
+    finder._getCourseBooks = jest.fn();
+    finder._findMatches = jest.fn(() => {
+      return Promise.resolve();
+    });
 
+    const query = "is your problems";
+    finder.search(query);
     expect(finder._findMatches).toHaveBeenCalledWith("is your problems", [
       "is",
       "your",
       "problems"
     ]);
+  });
+
+  test("should call _formatResults function with arguments", done => {
+    finder._formatResults = jest.fn();
+    finder._getCourseBooks = jest.fn();
+    finder._findMatches = jest.fn(() => {
+      return Promise.resolve({});
+    });
+
+    const query = "is your problems";
+    finder.search(query).then(results => {
+      expect(finder._formatResults).toHaveBeenCalledWith({}, 3);
+      done();
+    });
+  });
+
+  test("should call _getCourseBooks function with arguments", done => {
+    finder._formatResults = jest.fn(() => []);
+    finder._getCourseBooks = jest.fn();
+    finder._findMatches = jest.fn(() => {
+      return Promise.resolve({});
+    });
+
+    const query = "is your problems";
+    finder.search(query).then(results => {
+      expect(finder._getCourseBooks).toHaveBeenCalledWith([]);
+      done();
+    });
   });
 });
 
@@ -132,6 +171,7 @@ describe("CourseBookFinder: _formatResults", () => {
       ]
     };
     const limit = 2;
+
     const results = finder._formatResults(mockResults, limit);
     expect(results).toEqual([
       {
@@ -167,7 +207,6 @@ describe("CourseBookFinder: _getCourseBooks", () => {
     ];
 
     const books = finder._getCourseBooks(mockMatches);
-
     expect(books).toEqual([
       {
         author: "Anna Quindlen",
@@ -182,5 +221,63 @@ describe("CourseBookFinder: _getCourseBooks", () => {
         title: "The Art of War"
       }
     ]);
+  });
+});
+
+describe("CourseBookFinder", () => {
+  let finder;
+  beforeEach(() => {
+    finder = new CourseBookFinder(mockData);
+  });
+
+  afterAll(() => {
+    finder = undefined;
+  });
+
+  test("should find coursebooks for the given query string", done => {
+    const result = [
+      {
+        author: "Grant Cardone",
+        summary:
+          "The Book in Three Sentences: The 10X Rule says that 1) you should set targets for yourself that are 10X greater than what you believe you can achieve and 2) you should take actions that are 10X greater than what you believe are necessary to achieve your goals. The biggest mistake most people make in life is not setting goals high enough. Taking massive action is the only way to fulfill your true potential.",
+        title: "The Richest Man in Babylon"
+      },
+      {
+        author: "Hermann Simon",
+        summary:
+          "The Book in Three Sentences: Ultimately, profit is the only valid metric for guiding a company, and there are only three ways to influence profit: price, volume, and cost. Of these three factors, prices get the least attention, but have the greatest impact. The price a customer is willing to pay, and therefore the price a company can achieve, is always a reflection of the perceived value of the product or service in the customer’s eyes.",
+        title: "Free Will"
+      },
+      {
+        author: "Keith Johnstone",
+        summary:
+          "The Book in Three Sentences: Many of our behaviors are driven by our desire to achieve a particular level of status relative to those around us. People are continually raising and lowering their status in conversation through body language and words. Say yes to more and stop blocking the opportunities that come your way.",
+        title: "The Art of War"
+      }
+    ];
+    const query = "achieve";
+
+    finder.search(query).then(books => {
+      expect(books).toEqual(result);
+      done();
+    });
+  });
+
+  test("should find coursebooks for the given query string and count", done => {
+    const result = [
+      {
+        author: "Grant Cardone",
+        summary:
+          "The Book in Three Sentences: The 10X Rule says that 1) you should set targets for yourself that are 10X greater than what you believe you can achieve and 2) you should take actions that are 10X greater than what you believe are necessary to achieve your goals. The biggest mistake most people make in life is not setting goals high enough. Taking massive action is the only way to fulfill your true potential.",
+        title: "The Richest Man in Babylon"
+      }
+    ];
+    const query = "achieve";
+    const limit = 1;
+
+    finder.search(query, limit).then(books => {
+      expect(books).toEqual(result);
+      done();
+    });
   });
 });

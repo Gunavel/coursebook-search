@@ -1,6 +1,5 @@
 const MIN_MATCH_CHAR_LENGTH = 2;
 const DEFAULT_SUGGESTIONS_COUNT = 3;
-const MIN_COLLECTION_LENGTH_PER_ITERATION = 10000;
 
 class CourseBookFinder {
   constructor(data) {
@@ -15,8 +14,14 @@ class CourseBookFinder {
 
     const rawQuery = String(query).toLowerCase();
     const words = rawQuery.split(" ");
+    const limit = Number(suggestionsCount) || DEFAULT_SUGGESTIONS_COUNT;
 
-    return this._findMatches(rawQuery, words);
+    return this._findMatches(rawQuery, words).then(results => {
+      const matches = this._formatResults(results, limit);
+      const books = this._getCourseBooks(matches);
+
+      return books;
+    });
   }
 
   _findMatches(rawQuery, words) {
