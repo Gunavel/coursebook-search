@@ -145,3 +145,42 @@ describe("CourseBookFinder: _formatResults", () => {
     ]);
   });
 });
+
+describe("CourseBookFinder: _getCourseBooks", () => {
+  let finder;
+  beforeEach(() => {
+    finder = new CourseBookFinder(mockData);
+  });
+
+  afterAll(() => {
+    finder = undefined;
+  });
+
+  test("should return matching books with title, author and summary", () => {
+    const mockMatches = [
+      {
+        summary_id: 2
+      },
+      {
+        summary_id: 20
+      }
+    ];
+
+    const books = finder._getCourseBooks(mockMatches);
+
+    expect(books).toEqual([
+      {
+        author: "Anna Quindlen",
+        summary:
+          "The Book in Three Sentences: The only thing you have that nobody else has is control of your life. The hardest thing of all is to learn to love the journey, not the destination. Get a real life rather than frantically chasing the next level of success.",
+        title: "Letters from a Self-Made Merchant to His Son"
+      },
+      {
+        author: "Keith Johnstone",
+        summary:
+          "The Book in Three Sentences: Many of our behaviors are driven by our desire to achieve a particular level of status relative to those around us. People are continually raising and lowering their status in conversation through body language and words. Say yes to more and stop blocking the opportunities that come your way.",
+        title: "The Art of War"
+      }
+    ]);
+  });
+});

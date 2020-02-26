@@ -74,6 +74,23 @@ class CourseBookFinder {
   _sortMatches(matches) {
     return matches.sort((a, b) => b.score - a.score);
   }
+
+  _getCourseBooks(matches) {
+    const { titles, summaries, authors } = this.courseBooksData;
+
+    const books = matches.map(({ summary_id }) => {
+      const { summary } = summaries[summary_id];
+      const { author } = authors[summary_id];
+
+      return {
+        title: titles[summary_id],
+        author,
+        summary
+      };
+    });
+
+    return books;
+  }
 }
 
 module.exports = CourseBookFinder;
