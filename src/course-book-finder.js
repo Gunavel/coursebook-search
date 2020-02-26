@@ -7,6 +7,14 @@ class CourseBookFinder {
     this.summariesCollection = data.summaries;
   }
 
+  /**
+   * For a given query and suggestions count, searches the summaries collection and returns
+   * a Promise which resolves to collection of matching books
+   * @param {String} query
+   * @param {Number} suggestionsCount
+   *
+   * @returns SearchPromise {Array.<{title: String, author: String, summary: String}>}
+   */
   search(query, suggestionsCount) {
     if (query.length < MIN_MATCH_CHAR_LENGTH) {
       return [];
@@ -24,6 +32,16 @@ class CourseBookFinder {
     });
   }
 
+  /**
+   * For a given rawQuery and words, runs through summaries collection to look for exact or partial match
+   * Exact match - if rawQuery matches the summary
+   * Partial match - is evaluated based on the number of occurences of the words in the summary
+   * Partial match score - sum of occurences of each word
+   * @param {String} rawQuery
+   * @param {Array} words
+   *
+   * @returns {{exactMatches: Array.<{summary_id: Number}>, partialMatches: Array.<{summary_id: Number, score: Number}}
+   */
   _findMatches(rawQuery, words) {
     const collection = this.summariesCollection;
     const exactMatches = [];
@@ -62,6 +80,14 @@ class CourseBookFinder {
     });
   }
 
+  /**
+   * Given a match results, returns top matches based on the provided limit
+   * Returns exactMatches if there is any otherwise picks from partialMatches.
+   * @param {Array.<{exactMatches: Array, partialMatches: Array}>} results
+   * @param {Number} limit
+   *
+   * @returns {Array.<{summary_id: Number, ?score: Number}>}
+   */
   _formatResults(results, limit) {
     const { exactMatches, partialMatches } = results;
     let matches = [];
@@ -76,10 +102,24 @@ class CourseBookFinder {
     return matches;
   }
 
+  /**
+   * Given a matches collection, returns a sorted collection based on score in descending order
+   * @param {Array.<{score: Number, summary_id: Number}>} matches
+   *
+   * @returns {Array.<{score: Number, summary_id: Number}>}
+   */
   _sortMatches(matches) {
     return matches.sort((a, b) => b.score - a.score);
   }
 
+  /**
+   * Given a matches collection, returns collection of matching books
+   * Since 1:1 relation exists between titles, summaries and authors,
+   * the value at the specified index in the array equal to summary_id is picked
+   * @param {Array.<{score: Number, summary_id: Number}>} matches
+   *
+   * @returns {Array.<{title: String, author: String, summary: String}>}
+   */
   _getCourseBooks(matches) {
     const { titles, summaries, authors } = this.courseBooksData;
 
