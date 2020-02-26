@@ -1,74 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1582739161759" clover="3.2.0">
-  <project timestamp="1582739161759" name="All files">
-    <metrics statements="53" coveredstatements="53" conditionals="10" coveredconditionals="10" methods="14" coveredmethods="14" elements="77" coveredelements="77" complexity="0" loc="53" ncloc="53" packages="2" files="3" classes="3"/>
-    <package name="api">
-      <metrics statements="44" coveredstatements="44" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="10"/>
-      <file name="course-book-finder.js" path="/Users/Guna/Development/coursebook-search/src/api/course-book-finder.js">
-        <metrics statements="44" coveredstatements="44" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="10"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="6" count="15" type="stmt"/>
-        <line num="7" count="15" type="stmt"/>
-        <line num="19" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="23" count="8" type="stmt"/>
-        <line num="24" count="8" type="stmt"/>
-        <line num="25" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="8" type="stmt"/>
-        <line num="28" count="8" type="stmt"/>
-        <line num="29" count="8" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
-        <line num="46" count="5" type="stmt"/>
-        <line num="47" count="5" type="stmt"/>
-        <line num="48" count="5" type="stmt"/>
-        <line num="50" count="5" type="stmt"/>
-        <line num="51" count="5" type="stmt"/>
-        <line num="52" count="222" type="stmt"/>
-        <line num="54" count="222" type="cond" truecount="2" falsecount="0"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="61" count="221" type="stmt"/>
-        <line num="63" count="221" type="stmt"/>
-        <line num="64" count="514" type="stmt"/>
-        <line num="65" count="514" type="stmt"/>
-        <line num="68" count="221" type="stmt"/>
-        <line num="74" count="5" type="stmt"/>
-        <line num="79" count="5" type="stmt"/>
-        <line num="92" count="7" type="stmt"/>
-        <line num="93" count="7" type="stmt"/>
-        <line num="95" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="96" count="2" type="stmt"/>
-        <line num="98" count="5" type="stmt"/>
-        <line num="99" count="5" type="stmt"/>
-        <line num="102" count="7" type="stmt"/>
-        <line num="112" count="261" type="stmt"/>
-        <line num="124" count="5" type="stmt"/>
-        <line num="126" count="5" type="stmt"/>
-        <line num="127" count="8" type="stmt"/>
-        <line num="128" count="8" type="stmt"/>
-        <line num="130" count="8" type="stmt"/>
-        <line num="137" count="5" type="stmt"/>
-        <line num="141" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="helpers">
-      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
-      <file name="debounce.js" path="/Users/Guna/Development/coursebook-search/src/helpers/debounce.js">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="100" type="stmt"/>
-        <line num="5" count="100" type="stmt"/>
-        <line num="7" count="100" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="12" count="100" type="stmt"/>
-        <line num="13" count="100" type="stmt"/>
-      </file>
-      <file name="is-empty-object.js" path="/Users/Guna/Development/coursebook-search/src/helpers/is-empty-object.js">
-        <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="2" count="4" type="cond" truecount="2" falsecount="0"/>
-      </file>
-    </package>
+<coverage generated="1582746740084" clover="3.2.0">
+  <project timestamp="1582746740084" name="All files">
+    <metrics statements="13" coveredstatements="13" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="7" elements="23" coveredelements="23" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
+    <file name="auto-complete.js" path="/Users/Guna/Development/coursebook-search/src/components/SearchBar/auto-complete.js">
+      <metrics statements="13" coveredstatements="13" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="7"/>
+      <line num="13" count="5" type="stmt"/>
+      <line num="15" count="5" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="19" count="5" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="23" count="5" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="27" count="5" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="32" count="5" type="cond" truecount="3" falsecount="0"/>
+      <line num="35" count="5" type="stmt"/>
+      <line num="46" count="5" type="stmt"/>
+    </file>
   </project>
 </coverage>

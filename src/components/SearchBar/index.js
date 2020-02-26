@@ -82,6 +82,7 @@ class FilterableSearchBar extends Component {
     this.setState({
       searchText: '',
     });
+
     this.props.onSubmit(this.state.selectedBook);
   };
 

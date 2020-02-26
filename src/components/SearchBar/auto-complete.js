@@ -32,7 +32,11 @@ function AutoCompleteList(props) {
   const autoCompleteItems = listItems.length > 0 && showList && (
     <div className="autocomplete-items">
       {listItems.map(item => (
-        <div key={item.title} onClick={handleListItemClick(item)}>
+        <div
+          className="list-item"
+          key={item.title}
+          onClick={handleListItemClick(item)}
+        >
           {item.title}
         </div>
       ))}

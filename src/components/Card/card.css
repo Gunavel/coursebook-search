@@ -6,16 +6,16 @@
   text-align: center;
 }
 
-.header {
+.card .header {
   background-color: #4caf50;
   color: white;
   padding: 10px;
 }
 
-.footer {
+.card .footer {
   padding: 10px;
 }
 
-.content {
+.card .content {
   padding: 10px;
 }

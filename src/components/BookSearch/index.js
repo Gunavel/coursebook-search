@@ -7,7 +7,7 @@ import BooksList from '../BooksList';
 // Helpers
 import _isEmptyObject from '../../helpers/is-empty-object';
 
-function BookFinder() {
+function BookSearch() {
   const [books, setBooks] = useState([]);
 
   const handleSearchSubmit = book => {
@@ -29,4 +29,4 @@ function BookFinder() {
   );
 }
 
-export default BookFinder;
+export default BookSearch;
