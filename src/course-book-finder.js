@@ -56,6 +56,24 @@ class CourseBookFinder {
       resolve(result);
     });
   }
+
+  _formatResults(results, limit) {
+    const { exactMatches, partialMatches } = results;
+    let matches = [];
+
+    if (exactMatches.length > 0) {
+      matches.push(exactMatches[0]);
+    } else {
+      const sortedPartialMatches = this._sortMatches(partialMatches);
+      matches = sortedPartialMatches.slice(0, limit);
+    }
+
+    return matches;
+  }
+
+  _sortMatches(matches) {
+    return matches.sort((a, b) => b.score - a.score);
+  }
 }
 
 module.exports = CourseBookFinder;

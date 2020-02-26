@@ -71,13 +71,77 @@ describe("CourseBookFinder: _findMatches", () => {
         done();
       });
   });
+});
 
-  test("should have exactMatch if raw query matches", done => {
-    const rawQuery =
-      "The Book in Three Sentences: Seek out new ideas and try new things. When trying something new, do it on a scale where failure is survivable. Seek out feedback and learn from your mistakes as you go along.";
-    finder._findMatches(rawQuery, []).then(result => {
-      expect(result.exactMatches).toEqual([{ summary_id: 0 }]);
-      done();
-    });
+describe("CourseBookFinder: _formatResults", () => {
+  let finder;
+  beforeEach(() => {
+    finder = new CourseBookFinder(mockData);
+  });
+
+  afterAll(() => {
+    finder = undefined;
+  });
+
+  test("should return empty array if there are no matches", () => {
+    const mockResults = {
+      exactMatches: [],
+      partialMatches: []
+    };
+    const limit = 2;
+
+    const results = finder._formatResults(mockResults, limit);
+    expect(results).toEqual([]);
+  });
+
+  test("should return exact matches if there is any", () => {
+    const mockResults = {
+      exactMatches: [
+        {
+          summary_id: 2
+        }
+      ],
+      partialMatches: []
+    };
+    const limit = 2;
+
+    const results = finder._formatResults(mockResults, limit);
+    expect(results).toEqual([
+      {
+        summary_id: 2
+      }
+    ]);
+  });
+
+  test("should return sorted partial matches", () => {
+    const mockResults = {
+      exactMatches: [],
+      partialMatches: [
+        {
+          summary_id: 3,
+          score: 10
+        },
+        {
+          summary_id: 5,
+          score: 3
+        },
+        {
+          summary_id: 20,
+          score: 40
+        }
+      ]
+    };
+    const limit = 2;
+    const results = finder._formatResults(mockResults, limit);
+    expect(results).toEqual([
+      {
+        summary_id: 20,
+        score: 40
+      },
+      {
+        summary_id: 3,
+        score: 10
+      }
+    ]);
   });
 });
