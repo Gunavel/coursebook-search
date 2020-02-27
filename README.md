@@ -57,3 +57,15 @@ For build and testing libaries used in the project, see [package.json](https://g
 
 - This project is a take home challenge
 - Thanks to the team for providing an opportunity
+
+## Improvements
+
+- [ ] Split large data into smaller chunks and process in parallel while searching
+- [ ] Implement error handling across the application
+- [ ] Improve on search accuracy
+- [ ] Add more test cases to cover edge cases
+- [ ] Analyze and optimize UI render performance
+- [ ] Improve on UX
+- [ ] Make frequent logical git commits 
+- [ ] Improve on naming conventions
+- [ ] Don't over think on CSS styles
